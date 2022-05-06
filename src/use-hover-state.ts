@@ -19,8 +19,8 @@ export type HoverState = {
 };
 
 export type HoverOptions = {
-  delayIn?: number;
-  delayOut?: number;
+  enterDelay?: number;
+  leaveDelay?: number;
 };
 
 type RealHoverState = {
@@ -55,8 +55,8 @@ export type HoveredStateTuple = [
  *
  */
 export const useHoverState = (options: HoverOptions = {}): HoveredStateTuple => {
-  const [hovered, setHovered] = useDelayedState(undefined, options.delayIn || 0, options.delayOut || 0);
-  const [focused, setFocused] = useDelayedState(undefined, options.delayIn || 0, options.delayOut || 0);
+  const [hovered, setHovered] = useDelayedState(undefined, options.enterDelay || 0, options.leaveDelay || 0);
+  const [focused, setFocused] = useDelayedState(undefined, options.enterDelay || 0, options.leaveDelay || 0);
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {

@@ -79,7 +79,7 @@ describe('useHoverState', () => {
     });
 
     it('responds to enter delay', () => {
-      const result = testHook({ delayIn: 100 });
+      const result = testHook({ enterDelay: 100 });
       expect(result.current[0]).toBe(false);
 
       mouseEnter();
@@ -93,7 +93,7 @@ describe('useHoverState', () => {
     });
 
     it('responds to leave delay', () => {
-      const result = testHook({ delayOut: 100 });
+      const result = testHook({ leaveDelay: 100 });
       expect(result.current[0]).toBe(false);
 
       mouseEnter();
