@@ -46,7 +46,7 @@ describe('useHoverState', () => {
 
     mouseEnter();
     expect(result.current[0]).toBe(true);
-    expect(result.current[2]).toEqual({ isFocused: false, isHovered: true });
+    expect(result.current[2]).toEqual({ isFocused: undefined, isHovered: true });
 
     mouseLeave();
     expect(result.current[0]).toBe(false);
@@ -60,7 +60,7 @@ describe('useHoverState', () => {
 
       focusIn();
       expect(result.current[0]).toBe(true);
-      expect(result.current[2]).toEqual({ isFocused: true, isHovered: false });
+      expect(result.current[2]).toEqual({ isFocused: true, isHovered: undefined });
 
       focusOut();
       expect(result.current[0]).toBe(false);
