@@ -1,6 +1,7 @@
 module.exports = [
   {
-    path: 'dist/es2015/index.js',
-    limit: '0.5 KB',
+    path: 'dist/index.js',
+    limit: '0.7 KB',
+    ignore: ['react', 'use-callback-ref'],
   },
 ];

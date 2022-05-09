@@ -1,7 +1,7 @@
 [
   {
-    "name": "dist/es2015/index.js",
+    "name": "dist/index.js",
     "passed": true,
-    "size": 512
+    "size": 617
   }
 ]
