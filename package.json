@@ -2,29 +2,33 @@
   "name": "use-hover-state",
   "version": "1.0.0",
   "description": "React hook which combines mouse and keyboard for a single hover event",
-  "main": "dist/es5/index.js",
   "repository": "git@github.com:thearnica/use-hover-state.git",
   "author": "<thearnica@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^2.1.6",
     "@testing-library/react": "^13.2.0",
     "@theuiteam/lib-builder": "^0.1.4",
+    "bundt": "2.0.0-next.5",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
   "sideEffects": false,
-  "module": "dist/es2015/index.js",
-  "module:es2019": "dist/es2019/index.js",
-  "types": "dist/es5/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "dev": "lib-builder dev",
     "test": "jest",
     "test:ci": "jest --runInBand --coverage",
-    "build": "lib-builder build && yarn size:report",
+    "build": "bundt --minify",
     "release": "yarn build && yarn test",
-    "size": "npx size-limit",
-    "size:report": "npx size-limit --json > .size.json",
     "lint": "lib-builder lint",
     "format": "lib-builder format",
     "update": "lib-builder update",

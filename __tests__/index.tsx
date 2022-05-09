@@ -1,8 +1,9 @@
 import { fireEvent, act, render, screen } from '@testing-library/react';
 import React, { ButtonHTMLAttributes, MutableRefObject } from 'react';
 
-import { HoverOptions, useHoverState } from '../src';
-import { HoveredStateTuple } from '../src/use-hover-state';
+import type { HoverOptions, HoveredStateTuple } from 'use-hover-state';
+
+import { useHoverState } from '../src';
 
 describe('useHoverState', () => {
   const testHook = (
