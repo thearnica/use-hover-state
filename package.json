@@ -6,11 +6,13 @@
   "author": "<thearnica@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^7.0.8",
     "@testing-library/react": "^13.2.0",
     "@theuiteam/lib-builder": "^0.1.4",
     "bundt": "2.0.0-next.5",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "size-limit": "^7.0.8"
   },
   "sideEffects": false,
   "main": "dist/index.js",
@@ -27,8 +29,10 @@
   "scripts": {
     "test": "jest",
     "test:ci": "jest --runInBand --coverage",
-    "build": "bundt --minify",
+    "build": "bundt --minify && yarn size:report",
     "release": "yarn build && yarn test",
+    "size": "npx size-limit",
+    "size:report": "npx size-limit --json > .size.json",
     "lint": "lib-builder lint",
     "format": "lib-builder format",
     "update": "lib-builder update",
